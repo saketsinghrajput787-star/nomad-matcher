@@ -76,7 +76,13 @@ export const Landing = () => {
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Farmer Card */}
-          <div className="card text-center group hover:border-2 hover:border-primary-500">
+          <div
+            onClick={() => navigate('/register/farmer')}
+            onKeyDown={(e) => (e.key === 'Enter' ? navigate('/register/farmer') : null)}
+            role="button"
+            tabIndex={0}
+            className="card text-center group hover:border-2 hover:border-primary-500 cursor-pointer"
+          >
             <div className="flex justify-center mb-4">
               <div className="p-4 bg-green-100 rounded-full group-hover:bg-green-200 transition-colors">
                 <Tractor className="h-16 w-16 text-green-600" />
@@ -95,7 +101,13 @@ export const Landing = () => {
           </div>
 
           {/* Content Creator Card */}
-          <div className="card text-center group hover:border-2 hover:border-primary-500">
+          <div
+            onClick={() => navigate('/register/creator')}
+            onKeyDown={(e) => (e.key === 'Enter' ? navigate('/register/creator') : null)}
+            role="button"
+            tabIndex={0}
+            className="card text-center group hover:border-2 hover:border-primary-500 cursor-pointer"
+          >
             <div className="flex justify-center mb-4">
               <div className="p-4 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors">
                 <Camera className="h-16 w-16 text-blue-600" />
@@ -114,7 +126,13 @@ export const Landing = () => {
           </div>
 
           {/* Tourist Card */}
-          <div className="card text-center group hover:border-2 hover:border-primary-500">
+          <div
+            onClick={() => navigate('/register/tourist')}
+            onKeyDown={(e) => (e.key === 'Enter' ? navigate('/register/tourist') : null)}
+            role="button"
+            tabIndex={0}
+            className="card text-center group hover:border-2 hover:border-primary-500 cursor-pointer"
+          >
             <div className="flex justify-center mb-4">
               <div className="p-4 bg-orange-100 rounded-full group-hover:bg-orange-200 transition-colors">
                 <MapPin className="h-16 w-16 text-orange-600" />

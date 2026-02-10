@@ -1,0 +1,11 @@
+{
+  "name": "nomad-matcher-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix nomad-matcher run dev",
+    "build": "npm --prefix nomad-matcher run build",
+    "preview": "npm --prefix nomad-matcher run preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

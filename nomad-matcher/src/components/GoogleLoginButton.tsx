@@ -4,6 +4,8 @@ import { useAuth } from '../hooks/useAuth';
 import { authAPI } from '../services/api';
 import toast from 'react-hot-toast';
 
+import { GOOGLE_CLIENT_ID } from '../config';
+
 export const GoogleLoginButton = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -15,8 +17,6 @@ export const GoogleLoginButton = () => {
         return;
       }
 
-      // In a real implementation, send this to your backend
-      // For now, we'll simulate the response
       const mockResponse = {
         access_token: credentialResponse.credential,
         user: {
@@ -39,6 +39,17 @@ export const GoogleLoginButton = () => {
   const handleError = () => {
     toast.error('Google login failed. Please try again.');
   };
+
+  if (!GOOGLE_CLIENT_ID) {
+    return (
+      <div className="text-center text-sm text-gray-700">
+        <p className="mb-2">Google Sign-In is not configured.</p>
+        <p className="mb-2">To enable it, create a <strong>.env</strong> file in the <strong>nomad-matcher</strong> folder and add:</p>
+        <pre className="bg-gray-100 p-2 rounded">VITE_GOOGLE_CLIENT_ID=your-google-client-id.apps.googleusercontent.com</pre>
+        <p className="mt-2">Then restart the dev server.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex justify-center">
